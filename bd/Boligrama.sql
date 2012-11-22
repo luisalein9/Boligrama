@@ -39,7 +39,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `mydb`.`alumnos` (
   `matricula` INT NOT NULL COMMENT '		' ,
-  `contrasenia` INT NOT NULL ,
+  `contrasenia` VARCHAR(45) NOT NULL ,
   `correo` VARCHAR(45) NOT NULL ,
   `licenciaturas_idlicenciaturas` INT NOT NULL ,
   PRIMARY KEY (`matricula`) ,
@@ -133,8 +133,8 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `mydb`;
-INSERT INTO `mydb`.`alumnos` (`matricula`, `contrasenia`, `correo`, `licenciaturas_idlicenciaturas`) VALUES (207341483, 123, 'osvaldo172@hotmail.com', 1);
-INSERT INTO `mydb`.`alumnos` (`matricula`, `contrasenia`, `correo`, `licenciaturas_idlicenciaturas`) VALUES (207310034, 456, 'luisa.207310034@gmail.com', 1);
+INSERT INTO `mydb`.`alumnos` (`matricula`, `contrasenia`, `correo`, `licenciaturas_idlicenciaturas`) VALUES (207341483, 'osvaldo172', 'osvaldo172@hotmail.com', 1);
+INSERT INTO `mydb`.`alumnos` (`matricula`, `contrasenia`, `correo`, `licenciaturas_idlicenciaturas`) VALUES (207310034, '123', 'luisa.207310034@gmail.com', 1);
 
 COMMIT;
 
@@ -195,5 +195,118 @@ INSERT INTO `mydb`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (4
 INSERT INTO `mydb`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213252, 'T sel de ciencias de la comput', 'CBI', 9);
 INSERT INTO `mydb`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213198, 'Proyecto de investigacion 2', 'CBI', 18);
 INSERT INTO `mydb`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (555555, 'Optativa', 'CBI', 9);
+
+COMMIT;
+
+-- -----------------------------------------------------
+-- Data for table `mydb`.`ueas_licenciaturas`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `mydb`;
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (213038, 1, 1);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (211013, 1, 1);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (215003, 1, 1);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (210001, 1, 2);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (213039, 1, 2);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (211014, 1, 2);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (215109, 1, 2);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (214009, 1, 3);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (213035, 1, 3);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (213032, 1, 3);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (111111, 1, 3);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (213040, 1, 4);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (213274, 1, 4);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (212427, 1, 4);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (222222, 1, 4);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (213191, 1, 5);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (213221, 1, 5);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (213256, 1, 5);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (213196, 1, 5);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (213104, 1, 6);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (213193, 1, 6);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (212444, 1, 6);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (333333, 1, 6);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (213230, 1, 7);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (213194, 1, 7);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (215111, 1, 7);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (212208, 1, 7);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (215107, 1, 7);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (213228, 1, 8);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (212410, 1, 8);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (213141, 1, 8);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (212352, 1, 8);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (215105, 1, 8);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (212412, 1, 9);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (212321, 1, 9);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (212355, 1, 9);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (212413, 1, 9);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (213250, 1, 9);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (215114, 1, 10);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (212353, 1, 10);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (212354, 1, 10);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (215108, 1, 10);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (213251, 1, 10);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (215102, 1, 11);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (215104, 1, 11);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (213197, 1, 11);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (215103, 1, 11);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (215106, 1, 11);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (444444, 1, 12);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (213252, 1, 12);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (213198, 1, 12);
+INSERT INTO `mydb`.`ueas_licenciaturas` (`ueas_idueas`, `licenciaturas_idlicenciaturas`, `trimestre`) VALUES (555555, 1, 12);
+
+COMMIT;
+
+-- -----------------------------------------------------
+-- Data for table `mydb`.`seriacion`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `mydb`;
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (213038, 213039);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (211013, 211014);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (215003, 215109);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (215003, 213032);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (213039, 213040);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (213039, 213274);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (215109, 212427);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (214009, 212444);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (213035, 213274);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (213035, 213040);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (213032, 212427);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (213040, 213191);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (213274, 213221);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (213274, 213256);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (212427, 213196);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (212427, 213193);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (212427, 212444);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (213191, 213193);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (213221, 213104);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (213104, 213230);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (212444, 215111);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (212444, 212208);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (212444, 215107);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (213104, 213228);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (213230, 212410);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (213230, 212321);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (213194, 213141);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (215111, 212352);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (212208, 212413);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (212410, 212412);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (212352, 212355);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (212352, 212354);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (212412, 215114);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (212321, 212353);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (212321, 215105);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (212355, 215106);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (212413, 215108);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (213250, 213251);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (215114, 215102);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (212353, 213252);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (212354, 215103);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (212354, 215104);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (215114, 215103);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (213197, 213198);
+INSERT INTO `mydb`.`seriacion` (`ueas_idueas`, `uea_seriada`) VALUES (213191, 213194);
 
 COMMIT;
