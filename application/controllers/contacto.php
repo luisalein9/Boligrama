@@ -13,4 +13,4 @@
 		$this->load->view('contacto');
 	}
 }
-?>
+?>	
