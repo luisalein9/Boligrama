@@ -51,8 +51,13 @@ $active_record = TRUE;
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
 //$db['default']['password'] = '207341483';
+<<<<<<< HEAD
 $db['default']['password'] = 'Luisalein9*';
 $db['default']['database'] = 'mydb';
+=======
+$db['default']['password'] = 'root';
+$db['default']['database'] = 'boligramaDB';
+>>>>>>> 76093602602b344a27e345540a86d736977c61bb
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
