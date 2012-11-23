@@ -22,7 +22,7 @@ class Divisiones_c extends CI_Controller {
 				'lCBS' => $lCBS,
 				'lCSH' => $lCSH
 
-		);
+		 );
 
 		$this->load->view('divisiones_v', $datos);	
 
