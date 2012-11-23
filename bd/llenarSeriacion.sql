@@ -1,12 +1,3 @@
-/*
--- Query: SELECT
-`seriacion`.`ueas_idueas`,
-`seriacion`.`uea_seriada`
-FROM `mydb`.`seriacion`
-LIMIT 0, 1000
-
--- Date: 2012-11-19 17:51
-*/
 INSERT INTO `seriacion` (`ueas_idueas`,`uea_seriada`) VALUES (211013,211014);
 INSERT INTO `seriacion` (`ueas_idueas`,`uea_seriada`) VALUES (212208,212413);
 INSERT INTO `seriacion` (`ueas_idueas`,`uea_seriada`) VALUES (212321,212353);
