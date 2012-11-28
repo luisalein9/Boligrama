@@ -39,7 +39,7 @@
 
                     if (isset($value['ueas_idueas'])) {
 
-                        $this->db->select('nombre,division,creditos');
+                        $this->db->select('nombre,division,creditos,estado');
                         $this->db->from('ueas');
                         $this->db->where('idueas',$value['ueas_idueas']);
 

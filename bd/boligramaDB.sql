@@ -2,9 +2,6 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
-DROP SCHEMA IF EXISTS `boligramaDB` ;
-CREATE SCHEMA IF NOT EXISTS `boligramaDB` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ;
-USE `boligramaDB` ;
 
 -- -----------------------------------------------------
 -- Table `boligramaDB`.`divisiones`
@@ -60,6 +57,7 @@ CREATE  TABLE IF NOT EXISTS `boligramaDB`.`ueas` (
   `nombre` VARCHAR(45) NOT NULL ,
   `division` VARCHAR(45) NOT NULL ,
   `creditos` INT NOT NULL ,
+  `estado` INT NOT NULL ,
   PRIMARY KEY (`idueas`) )
 ENGINE = InnoDB;
 
@@ -91,7 +89,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `boligramaDB`.`seriacion` (
   `ueas_idueas` INT NOT NULL ,
-  `uea_seriada` INT NOT NULL ,
+  `uea_seriada` INT NULL ,
   PRIMARY KEY (`ueas_idueas`, `uea_seriada`) ,
   CONSTRAINT `fk_seriacion_ueas1`
     FOREIGN KEY (`ueas_idueas` )
@@ -143,58 +141,58 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `boligramaDB`;
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213038, 'Calculo diferencial', 'CBI', 11);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (211013, 'Mecanica y fluidos', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (215003, 'Int a las ciencias de la comput', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (210001, 'Metodo experimental', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213039, 'Calculo integral', 'CBI', 11);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (211014, 'Ondas y rotaciones', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (215109, 'Sociedad y las c de la comp', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (214009, 'Estructura de la materia', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213035, 'Algebra lineal palicada 1', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213032, 'Fundamentos matematicos de la comp', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (111111, 'Optativa', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213040, 'Calculo de varias variables 1', 'CBI', 11);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213274, 'Algebra lineal aplicada 2', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (212427, 'Introd a la programacion', 'CBI', 6);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (222222, 'Optativa', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213191, 'Ecuaciones diferenciales ordinarias 1', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213221, 'Matematicas finitas', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213256, 'Programacion lineal', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213196, 'Introd a la program en admon', 'CBI', 11);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213104, 'Algebra 1', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213193, 'Metodos numericos', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (212444, 'Programacion avanzada', 'CBI', 12);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (333333, 'Optativa', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213230, 'Logica', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213194, 'Probabilidad aplicada', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (215111, 'Programacion de sistemas 1', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (212208, 'Estructura de datos ', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (215107, 'Lenguajes de programacion', 'CBI', 12);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213228, 'Analisis combinatorio', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (212410, 'Dieseño logico', 'CBI', 11);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213141, 'Estadistica y diseño de experimentos', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (212352, 'Compiladores', 'CBI', 11);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (215105, 'Graficas por computadoras', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (212412, 'Arquitectura de computadoras', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (212321, 'Teor matemat de la comput', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (212355, 'Analisis y diseño de sistemas de computo', 'CBI', 11);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (212413, 'Introduccion al diseño de bases de datos', 'CBI', 11);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213250, 'Inteligencia artificial', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (215114, 'Redes de telecomunicaciones', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (212353, 'Analisis de algoritmos', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (212354, 'Sistemas operativos', 'CBI', 11);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (215108, 'T sel de bases de datos', 'CBI', 12);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213251, 'T sel de inteligencia artific', 'CBI', 12);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (215102, 'Redes de computadoras', 'CBI', 12);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (215104, 'Computacion en paralelo', 'CBI', 12);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213197, 'Proyecto de investigacion 1', 'CBI', 12);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (215103, 'Sistemas distribuidos', 'CBI', 12);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (215106, 'Ing de software', 'CBI', 12);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (444444, 'Optativa', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213252, 'T sel de ciencias de la comput', 'CBI', 9);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (213198, 'Proyecto de investigacion 2', 'CBI', 18);
-INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`) VALUES (555555, 'Optativa', 'CBI', 9);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (213038, 'Calculo diferencial', 'CBI', 11, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (211013, 'Mecanica y fluidos', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (215003, 'Int a las ciencias de la comput', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (210001, 'Metodo experimental', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (213039, 'Calculo integral', 'CBI', 11, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (211014, 'Ondas y rotaciones', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (215109, 'Sociedad y las c de la comp', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (214009, 'Estructura de la materia', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (213035, 'Algebra lineal palicada 1', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (213032, 'Fundamentos matematicos de la comp', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (111111, 'Optativa', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (213040, 'Calculo de varias variables 1', 'CBI', 11, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (213274, 'Algebra lineal aplicada 2', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (212427, 'Introd a la programacion', 'CBI', 6, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (222222, 'Optativa', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (213191, 'Ecuaciones diferenciales ordinarias 1', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (213221, 'Matematicas finitas', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (213256, 'Programacion lineal', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (213196, 'Introd a la program en admon', 'CBI', 11, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (213104, 'Algebra 1', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (213193, 'Metodos numericos', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (212444, 'Programacion avanzada', 'CBI', 12, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (333333, 'Optativa', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (213230, 'Logica', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (213194, 'Probabilidad aplicada', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (215111, 'Programacion de sistemas 1', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (212208, 'Estructura de datos ', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (215107, 'Lenguajes de programacion', 'CBI', 12, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (213228, 'Analisis combinatorio', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (212410, 'Dieseño logico', 'CBI', 11, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (213141, 'Estadistica y diseño de experimentos', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (212352, 'Compiladores', 'CBI', 11, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (215105, 'Graficas por computadoras', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (212412, 'Arquitectura de computadoras', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (212321, 'Teor matemat de la comput', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (212355, 'Analisis y diseño de sistemas de computo', 'CBI', 11, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (212413, 'Introduccion al diseño de bases de datos', 'CBI', 11, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (213250, 'Inteligencia artificial', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (215114, 'Redes de telecomunicaciones', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (212353, 'Analisis de algoritmos', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (212354, 'Sistemas operativos', 'CBI', 11, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (215108, 'T sel de bases de datos', 'CBI', 12, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (213251, 'T sel de inteligencia artific', 'CBI', 12, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (215102, 'Redes de computadoras', 'CBI', 12, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (215104, 'Computacion en paralelo', 'CBI', 12, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (213197, 'Proyecto de investigacion 1', 'CBI', 12, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (215103, 'Sistemas distribuidos', 'CBI', 12, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (215106, 'Ing de software', 'CBI', 12, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (444444, 'Optativa', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (213252, 'T sel de ciencias de la comput', 'CBI', 9, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (213198, 'Proyecto de investigacion 2', 'CBI', 18, 0);
+INSERT INTO `boligramaDB`.`ueas` (`idueas`, `nombre`, `division`, `creditos`, `estado`) VALUES (555555, 'Optativa', 'CBI', 9, 0);
 
 COMMIT;
 
