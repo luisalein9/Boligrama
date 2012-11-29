@@ -39,7 +39,7 @@
 
                     if (isset($value['ueas_idueas'])) {
 
-                        $this->db->select('nombre,division,creditos');
+                        $this->db->select('nombre,division,creditos,estado');
                         $this->db->from('ueas');
                         $this->db->where('idueas',$value['ueas_idueas']);
 
@@ -47,18 +47,28 @@
 
                         foreach ($datosUeas->result_array() as  $row2) {
                             $datos['ueasRelacionadas'][$index+1]=$row+$row2;
-                        }
 
-                        $this->db->select('uea_seriada');
-                        $this->db->from('seriacion');
-                        $this->db->where('ueas_idueas',$value['ueas_idueas']);
+                            $this->db->select('uea_seriada');
+                            $this->db->from('seriacion');
+                            $this->db->where('ueas_idueas',$value['ueas_idueas']);
 
-                        $seriacion= $this->db->get();
+                            $seriacion= $this->db->get();
 
-                        print_r($seriacion);
+                            $this->db->select('ueas_idueas');
+                            $this->db->from('seriacion');
+                            $this->db->where('uea_seriada',$value['ueas_idueas']);
 
-                        foreach ($seriacion->result_array() as  $row3) {
-                            $datos['ueasRelacionadas'][$index+1]=$row+$row2+$row3;
+                            $anterior= $this->db->get();
+
+                            foreach ($anterior->result_array() as $index3 => $row4) {
+                                //echo"<pre>"; print_r($row3['ueas_idueas']); echo"</pre>";
+                                $datos['ueasRelacionadas'][$index+1]['seriacion_ant'][$index3+1]=$row4['ueas_idueas'];
+                            }
+                            foreach ($seriacion->result_array() as $index2 => $row3) {
+                            //echo"<pre>"; print_r($row3); echo"</pre>";
+                                $datos['ueasRelacionadas'][$index+1]['seriacion_sgte'][$index2+1]=$row3['uea_seriada'];
+                            }
+
                         }
                     }
                 }
@@ -70,8 +80,24 @@
 
             return $datos;
 
-                }
     }
+
+    function traer_anterior($UEAsgt){
+
+        $this->db->select('ueas_idueas');
+        $this->db->from('seriacion');
+        $this->db->where('uea_seriada',$UEAsgt);
+
+        $anterior= $this->db->get();
+
+        foreach ($anterior->result_array() as $index2 => $row3) {
+            //echo"<pre>"; print_r($row3['ueas_idueas']); echo"</pre>";
+            $datos['ueasAnteriores'][$index2+1]=$row3['ueas_idueas'];
+        }
+
+        return $datos;
+    }
+}
 
 
 ?>
