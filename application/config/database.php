@@ -50,18 +50,10 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-<<<<<<< HEAD
-//$db['default']['password'] = '207341483';
-//contraseña fac
-$db['default']['password'] = '3034facundo';
-$db['default']['database'] = 'mydb';
-=======
 $db['default']['password'] = '207341483';
-//$db['default']['password'] = 'root';
-//$db['default']['password'] = '207341483';
-$db['default']['password'] = 'Luisalein9*';
+//contraseña fac
+//$db['default']['password'] = '3034facundo';
 $db['default']['database'] = 'boligramaDB';
->>>>>>> 14de3d826e082671ec722a625937e169ec46b176
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
