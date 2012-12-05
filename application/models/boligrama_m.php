@@ -89,11 +89,15 @@
         $this->db->where('uea_seriada',$UEAsgt);
 
         $anterior= $this->db->get();
-
-        foreach ($anterior->result_array() as $index2 => $row3) {
-            //echo"<pre>"; print_r($row3['ueas_idueas']); echo"</pre>";
-            $datos['ueasAnteriores'][$index2+1]=$row3['ueas_idueas'];
-        }
+		
+		if(($anterior->num_rows())>0){ //Verificando si tengo datos a cargar
+	        foreach ($anterior->result_array() as $index2 => $row3) {
+	            //echo"<pre>"; print_r($row3['ueas_idueas']); echo"</pre>";
+	            $datos['ueasAnteriores'][$index2+1]=$row3['ueas_idueas'];
+	        }
+		}else{
+			$datos=-1;
+		}
 
         return $datos;
     }
@@ -104,12 +108,15 @@
         $this->db->from('seriacion');
         $this->db->where('ueas_idueas',$UEAsgt);
 
-        $siguiente= $this->db->get();
-
-        foreach ($siguiente->result_array() as $index2 => $row3) {
-            //echo"<pre>"; print_r($row3['ueas_idueas']); echo"</pre>";
-            $datos['ueasAnteriores'][$index2+1]=$row3['uea_seriada'];
-        }
+        $anterior= $this->db->get();
+		if(($anterior->num_rows())>0){ //Verificando si tengo datos a cargar
+	        foreach ($anterior->result_array() as $index2 => $row3) {
+	            //echo"<pre>"; print_r($row3['ueas_idueas']); echo"</pre>";
+	            $datos['ueasSiguientes'][$index2+1]=$row3['uea_seriada'];
+	        }
+		}else{
+			$datos=-1;
+		}
 
         return $datos;
     }
