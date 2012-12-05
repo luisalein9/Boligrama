@@ -30,16 +30,16 @@
             </table>
 
                 <?php if(isset($licenciaturaId['ueasRelacionadas'])){
-                    for ($i=1; $i <13 ; $i++) { 
+                    for ($i=1; $i <13 ; $i++) {
                         echo "<div class='twelve columns filaUEA'>";
-                        echo "<div class='two columns'>Trimestre ".$i."</div>";
+                        echo "<div class='two columns'>Trimestre".$i."</div>";
                         foreach($licenciaturaId['ueasRelacionadas'] as $UEA){ 
-                            if ($UEA['trimestre']==$i) {?>                              
-                                    <div class="two columns cajaUEA">
+                            if ($UEA['trimestre']==$i) {?>
+                        			<?php $id=$UEA['ueas_idueas'];?>                              
+                                    <div class="two columns cajaUEA" id=<?=$id?> onClick='seleccionaUEA(<?=$id?>)'>
                                         Clave:<?=$UEA['ueas_idueas'] ?><br> 
                                         UEA: <?=$UEA['nombre'] ?> <br>
                                         creditos: <?=$UEA['creditos'] ?> <br>
-
                                     </div>
                         <?php }
                             }
