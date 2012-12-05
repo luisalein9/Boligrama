@@ -40,7 +40,7 @@
                                     <div class="two columns cajaUEA" id=<?=$id?> onclick='seleccionaUEA(<?=$id?>)'>
                                         Clave:<?=$UEA['ueas_idueas'] ?><br> 
                                         UEA: <?=$UEA['nombre'] ?> <br>
-                                        creditos: <?=$UEA['creditos'] ?> <br>
+                                        créditos: <?=$UEA['creditos'] ?> <br>
                                     </div>
                         <?php }
                             }

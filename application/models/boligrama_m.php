@@ -111,7 +111,6 @@
         $anterior= $this->db->get();
 		if(($anterior->num_rows())>0){ //Verificando si tengo datos a cargar
 	        foreach ($anterior->result_array() as $index2 => $row3) {
-	            //echo"<pre>"; print_r($row3['ueas_idueas']); echo"</pre>";
 	            $datos['ueasSiguientes'][$index2+1]=$row3['uea_seriada'];
 	        }
 		}else{
@@ -120,6 +119,29 @@
 
         return $datos;
     }
+	
+	function elimina_boligrama($matricula){
+		$datos=Array(
+			'alumnos_matricula' => $matricula,
+		);
+		
+		//$this->db->delete('ueas_cursadas', $datos); 
+	}
+	
+	function elimina_alumno($matricula){
+			
+		$datos=Array(
+				'matricula' => $matricula,
+		);
+		//$this->db->delete('ueas_cursadas', $datos); 
+
+		$datos=Array(
+				'matricula' => $matricula,
+		);
+		//$this->db->delete('ueas_cursadas', $datos); 
+
+		
+	}
 }
 
 
