@@ -16,6 +16,7 @@ class Boligrama_c extends CI_Controller {
         
     }
 
+
     public function mostrarBoligrama ($matricula,$clave=0){
 
     	$datos['licenciaturaId'] = $this->boligrama_m->traer_boligrama_m($matricula);
