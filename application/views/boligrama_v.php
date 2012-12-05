@@ -35,11 +35,10 @@
                         echo "<div class='two columns'>Trimestre ".$i."</div>";
                         foreach($licenciaturaId['ueasRelacionadas'] as $UEA){ 
                             if ($UEA['trimestre']==$i) {?>                              
-                                    <div class="two columns cajaUEA estado<?=$UEA['estado'] ?>">
+                                    <div class="two columns cajaUEA">
                                         Clave:<?=$UEA['ueas_idueas'] ?><br> 
                                         UEA: <?=$UEA['nombre'] ?> <br>
                                         creditos: <?=$UEA['creditos'] ?> <br>
-                                        Estado: <?=$UEA['estado'] ?>
 
                                     </div>
                         <?php }
