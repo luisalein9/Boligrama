@@ -218,6 +218,22 @@
 		
 		$this->db->insert('ueas_cursadas', $datos);
 	}
+	
+	function valida_inserta_uea($matricula, $iduea){
+		
+		$this->db->select('alumnos_matricula');
+        $this->db->from('ueas_cursadas');
+        $this->db->where('alumnos_matricula',$matricula);
+        $this->db->where('iduea',$iduea);
+		
+		$existe= $this->db->get();
+		
+		if(($existe->num_rows())>0){ //Verificando si tengo datos a cargar
+	        return 1;
+		}else{
+			return -1;
+		}
+	}
 
 }
 
