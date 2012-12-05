@@ -28,39 +28,25 @@
 			</ul>
 		</div>
 	</div><hr>
-	
-<script src="//www.w3resource.com/zurb-foundation3/foundation3/javascripts/foundation.min.js"></script>  
-<script>  
-$(document).foundationNavigation();  
-</script>  
-		<table>
-            <thead>
-                <tr>
-                    <th>Trimestre</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                </tbody>
-     	 </table>
-		
+	 
+
+<div class="twelve columns">
+
+
                 <?php if(isset($licenciaturaId['ueasRelacionadas'])){
                     for ($i=1; $i <13 ; $i++) {
                         echo "<div class='twelve columns filaUEA'>";
                         echo "<div class='two columns'>Trimestre".$i."</div>";
                         foreach($licenciaturaId['ueasRelacionadas'] as $UEA){ 
                             if ($UEA['trimestre']==$i) {?>
-                        			<?php $id=$UEA['ueas_idueas'];?>                              
-                                    <div class="two columns cajaUEA" id=<?=$id?> onclick='seleccionaUEA(<?=$id?>)'>
+                        			<?php $id=$UEA['ueas_idueas'];?> 
+                                <a href="<?= base_url().'index.php/boligrama_c/insertar_ueas_cursadas/'.$matricula.'/'.$UEA['ueas_idueas'] ?>">
+                                    <div class="two columns cajaUEA" id=<?=$id?> >
                                         Clave:<?=$UEA['ueas_idueas'] ?><br> 
                                         UEA: <?=$UEA['nombre'] ?> <br>
                                         créditos: <?=$UEA['creditos'] ?> <br>
                                     </div>
+                                </a>
                         <?php }
                             }
                         echo "</div>";
@@ -76,5 +62,9 @@ $(document).foundationNavigation();
 			<div class="row">
 				<p class="six columns">Tiempo aproximado para terminar:  </p>
 			</div> 
+
+<?= (isset($script)) ?  $script : " " ;?>
+
+            <?= ($ueasCursadas!=-1) ? $pintaCursada  :  "" ;?>
 	</body>
 </html>	
