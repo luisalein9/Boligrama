@@ -8,6 +8,7 @@
         <script src="<?=base_url(); ?>static/foundation/javascripts/marketing_docs.js"></script>
         <script src="<?=base_url(); ?>static/js/jquery-1.8.2.js"></script>
         <link rel="stylesheet" href="<?=base_url();?>/static/CSS/boligrama.css">
+        <script src="<?=base_url(); ?>static/js/boligrama.js"></script>
     </head>
 	<body>
 		<!--pre> < ?= print_r($licenciaturaId['ueasRelacionadas']) ?></pre-->
@@ -27,7 +28,7 @@
             </thead>
             <tbody>
                 </tbody>
-            </table>
+            </table>	
 
                 <?php if(isset($licenciaturaId['ueasRelacionadas'])){
                     for ($i=1; $i <13 ; $i++) {
@@ -36,7 +37,7 @@
                         foreach($licenciaturaId['ueasRelacionadas'] as $UEA){ 
                             if ($UEA['trimestre']==$i) {?>
                         			<?php $id=$UEA['ueas_idueas'];?>                              
-                                    <div class="two columns cajaUEA" id=<?=$id?> onClick='seleccionaUEA(<?=$id?>)'>
+                                    <div class="two columns cajaUEA" id=<?=$id?> onclick='seleccionaUEA(<?=$id?>)'>
                                         Clave:<?=$UEA['ueas_idueas'] ?><br> 
                                         UEA: <?=$UEA['nombre'] ?> <br>
                                         creditos: <?=$UEA['creditos'] ?> <br>

@@ -97,6 +97,22 @@
 
         return $datos;
     }
+
+    function traer_siguiente($UEAsgt){
+
+        $this->db->select('uea_seriada');
+        $this->db->from('seriacion');
+        $this->db->where('ueas_idueas',$UEAsgt);
+
+        $siguiente= $this->db->get();
+
+        foreach ($siguiente->result_array() as $index2 => $row3) {
+            //echo"<pre>"; print_r($row3['ueas_idueas']); echo"</pre>";
+            $datos['ueasAnteriores'][$index2+1]=$row3['uea_seriada'];
+        }
+
+        return $datos;
+    }
 }
 
 
