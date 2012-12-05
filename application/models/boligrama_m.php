@@ -174,22 +174,22 @@
       return $datos[1];
 	}
 
-	function trae_ueas_cursadas($matricula){
+	function trae_id_ueas_cursadas($matricula){
 		$this->db->select('iduea');
-	        $this->db->from('ueas_cursadas');
-	        $this->db->where('alumnos_matricula',$matricula);
-	
-	        $ueas_c= $this->db->get();
-			if(($ueas_c->num_rows())>0){ //Verificando si tengo datos a cargar
-				$indice=1;
-		        foreach ($ueas_c->result_array() as $valor) {
-		            $datos[$indice]=$valor['iduea'];
-					$indice++;
-		        }
-			}else{
-				$datos=-1;
-			}
-	      return $datos;			
+        $this->db->from('ueas_cursadas');
+        $this->db->where('alumnos_matricula',$matricula);
+
+        $ueas_c= $this->db->get();
+		if(($ueas_c->num_rows())>0){ //Verificando si tengo datos a cargar
+			$indice=1;
+	        foreach ($ueas_c->result_array() as $valor) {
+	            $datos[$indice]=$valor['iduea'];
+				$indice++;
+	        }
+		}else{
+			$datos=-1;
+		}
+      return $datos;			
 	}
 
 	function trae_creditos_uea($iduea){
@@ -209,6 +209,7 @@
       return $datos[1];		
 		
 	}
+
 }
 
 

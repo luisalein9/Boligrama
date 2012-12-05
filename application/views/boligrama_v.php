@@ -70,11 +70,11 @@ $(document).foundationNavigation();
 			<div class="row">
 				<div class="twelve columns">
 					<p class="six columns">Créditos totales de la carrera: <?=$creditosL?></p>
-					<p class="six columns">Créditos acumulados: </p>
+					<p class="six columns">Créditos acumulados: <?=$creditosAlumno ?></p>
 				</div>
 			</div>             
 			<div class="row">
-				<p class="six columns">Tiempo aproximado para terminar: </p>
+				<p class="six columns">Tiempo aproximado para terminar:  </p>
 			</div> 
 	</body>
 </html>	

@@ -24,8 +24,14 @@ class Boligrama_c extends CI_Controller {
     	$datos['UEAAnterior'] = $this->boligrama_m->traer_anterior($clave);
 		$datos['UEASiguiente'] = $this->boligrama_m->traer_siguiente($clave);
 		$datos['creditosL'] = $this->boligrama_m->trae_creditos_licenciatura($id_lic);
-		$datos['ueasCursadas'] =$this->boligrama_m->trae_ueas_cursadas($matricula);
-
+		$datos['ueasCursadas'] =$this->boligrama_m->trae_id_ueas_cursadas($matricula);
+		
+		$datos['creditosAlumno'] =0;
+		
+		foreach ($datos['ueasCursadas'] as $valor) {
+			$datos['creditosAlumno'] = $datos['creditosAlumno'] + $this->boligrama_m->trae_creditos_uea($valor);
+		}
+		
 		// echo "<br>";print_r($datos['UEAAnterior']);
 		// echo "<br>";print_r($datos['UEASiguiente']);		
 
