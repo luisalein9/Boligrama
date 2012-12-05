@@ -20,10 +20,14 @@ class Boligrama_c extends CI_Controller {
     public function mostrarBoligrama ($matricula,$clave=0){
 
     	$datos['licenciaturaId'] = $this->boligrama_m->traer_boligrama_m($matricula);
+		$id_lic=$this->boligrama_m->trae_idLic($matricula);
     	$datos['UEAAnterior'] = $this->boligrama_m->traer_anterior($clave);
 		$datos['UEASiguiente'] = $this->boligrama_m->traer_siguiente($clave);
-		echo "<br>";print_r($datos['UEAAnterior']);
-		echo "<br>";print_r($datos['UEASiguiente']);		
+		$datos['creditosL'] = $this->boligrama_m->trae_creditos_licenciatura($id_lic);
+		$datos['ueasCursadas'] =$this->boligrama_m->trae_ueas_cursadas($matricula);
+
+		// echo "<br>";print_r($datos['UEAAnterior']);
+		// echo "<br>";print_r($datos['UEASiguiente']);		
 
         $this->load->view('boligrama_v', $datos);
     }
