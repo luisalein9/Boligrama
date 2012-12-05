@@ -54,8 +54,14 @@ class Boligrama_c extends CI_Controller {
 			echo "<br>mandará a llamar la función para eliminar usuario";
 			$this->boligrama_m->elimina_alumno($matricula);
 		}
-				
-	}	
+	}
+	
+	public function insertar_ueas_cursadas($matricula, $uea){
+
+			echo "<br>mandará a llamar la función para insertar uea cursada";
+			//$this->boligrama_m->inserta_uea_cursada($matricula, $uea);
+
+	}		
 
 }
 

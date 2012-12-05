@@ -210,6 +210,15 @@
 		
 	}
 
+	function inserta_uea_cursada($matricula, $iduea){
+		$datos=Array(
+			'alumnos_matricula' => $matricula,
+			'iduea' => $iduea,
+		);
+		
+		$this->db->insert('ueas_cursadas', $datos);
+	}
+
 }
 
 
