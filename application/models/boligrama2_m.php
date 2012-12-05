@@ -53,7 +53,7 @@
 	    
 	    function traer_idueas_cursadas($matricula){
 	
-	            $this->db->select('ueas_idueas');
+	            $this->db->select('iduea');
 	            $this->db->from('ueas_cursadas');
 	            $this->db->where('alumnos_matricula',$matricula);
 	
@@ -62,7 +62,7 @@
 				if(($ueas_c->num_rows())>0){ //Verificando si tengo datos a cargar
 					$indice=1;
 					foreach ($ueas_c->result_array() as $value) {
-						$ueas_cursadas[$indice] = $value['ueas_idueas'];
+						$ueas_cursadas[$indice] = $value['iduea'];
 						$indice++;
 					 }
 				
@@ -73,7 +73,7 @@
 	
 	    }	//Fin función
 	   
-	    function traer_ueas_cursadas($iduea){
+	    function traer_ueas($iduea){
 	
 	            $this->db->select('nombre');
 				$this->db->select('creditos');
@@ -94,7 +94,33 @@
 					return(-1);
 				}//fin del else
 	
-	    }	//Fin función	   		  	
+	    }	//Fin función	
+
+	   	function traer_materias_lic($id_lic, $id_trim){
+	
+	            $this->db->select('ueas_idueas');
+				$this->db->select('licenciaturas_idlicenciaturas');
+				
+	            $this->db->from('ueas_licenciaturas');
+	            $this->db->where('licenciaturas_idlicenciaturas',$id_lic);
+	            $this->db->where('trimestre',$id_trim);
+	
+				$ueas_lic=$this->db->get(); 
+			
+				if(($ueas_lic->num_rows())>0){ //Verificando si tengo datos a cargar
+					$indice=1;
+					foreach ($ueas_lic->result_array() as $value) {
+						$ueas_licenciatura[$indice] = $value;
+						$indice++;
+					 }
+				
+					return($ueas_licenciatura);
+				}else{
+					return(-1);
+				}//fin del else
+	
+	    }	//Fin función	    
+	       		  	
     } //Fin clase
 
 
