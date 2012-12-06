@@ -10,25 +10,35 @@
         <link rel="stylesheet" href="<?=base_url();?>/static/CSS/boligrama.css">
         <link rel="stylesheet" href="<?=base_url();?>/static/foundation/stylesheet/foundation.top-bar.css">
         <script src="<?=base_url(); ?>static/js/boligrama.js"></script>
+        
+        <!--modificaciones-->
+        <script src="<?=base_url() ?>static/js/jquery.popupWindow.js"></script>
+        <script src="<?=base_url(); ?>static/js/boligrama.js"></script>
+        
     </head>
 	<body>
 		<!--pre> < ?= print_r($licenciaturaId['ueasRelacionadas']) ?></pre-->
-	<div class="row"> <!--Barra de navegación -->
-		<div class="twelve columns">
-			<ul class="nav-bar">
-	            <li class="nine columns"><a href="#">Boligrama</a></li>
-	            <li class="has-flyout three columns">
-	              <a href="#">Opciones</a>
-	              <a href="#" class="flyout-toggle"><span> </span></a>
-	              <ul class="flyout" style="display: none; ">
-	                <li><a href="#">Eliminar boligrama</a></li>
-	                <li><a href="#">Eliminar cuenta</a></li>
-	              </ul>
-	            </li>
-			</ul>
-		</div>
-	</div><hr>
-	 
+    <div class="row"> <!--Barra de navegación -->
+        <div class="twelve columns">
+            <ul class="nav-bar">
+                <li class="nine columns"><a href="#">Boligrama</a></li>
+                <li class="has-flyout three columns">
+                  <a href="#">Opciones</a>
+                  <a href="#" class="flyout-toggle"><span> </span></a>
+                  <ul class="flyout" style="display: none; ">
+                    <li><a href="http://localhost/Boligrama/index.php/boligrama_c/eliminarBoligrama/<?=$matricula?>" id="eliminarBoli">Eliminar boligrama</a></li>
+                    <li><a href="http://localhost/Boligrama/index.php/boligrama_c/eliminarAlumno/<?=$matricula?>" id="eliminarCuenta">Eliminar cuenta</a></li>
+                    <li><a href="http://localhost/Boligrama/index.php/boligrama_c/mostrarBoligrama/<?=$matricula?>" id="eliminarCuenta">Mostrar seriación</a></li>
+                  </ul>
+                </li>
+            </ul>
+        </div>
+    </div><hr>
+    
+<script src="//www.w3resource.com/zurb-foundation3/foundation3/javascripts/foundation.min.js"></script>  
+<script>  
+$(document).foundationNavigation();  
+</script>  
 
 <div class="twelve columns">
 
