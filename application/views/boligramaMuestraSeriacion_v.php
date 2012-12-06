@@ -40,7 +40,7 @@
                         foreach($licenciaturaId['ueasRelacionadas'] as $UEA){ 
                             if ($UEA['trimestre']==$i) {?>
                         			<?php $id=$UEA['ueas_idueas'];?> 
-                                <a href="<?= base_url().'index.php/boligrama_c/insertar_ueas_cursadas/'.$matricula.'/'.$UEA['ueas_idueas'] ?>">
+                                <a href="<?= base_url().'index.php/boligrama_c/mostrarBoligrama/'.$matricula.'/'.$UEA['ueas_idueas'] ?>">
                                     <div class="two columns cajaUEA" id=<?=$id?> >
                                         Clave:<?=$UEA['ueas_idueas'] ?><br> 
                                         UEA: <?=$UEA['nombre'] ?> <br>

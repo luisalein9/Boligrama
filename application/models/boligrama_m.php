@@ -219,6 +219,38 @@
 		$this->db->insert('ueas_cursadas', $datos);
 	}
 
+        function valida_inserta_uea($matricula, $iduea){
+        
+        $this->db->select('alumnos_matricula');
+        $this->db->from('ueas_cursadas');
+        $this->db->where('alumnos_matricula',$matricula);
+        $this->db->where('iduea',$iduea);
+        
+        $existe= $this->db->get();
+        
+        if(($existe->num_rows())>0){ //Verificando si tengo datos a cargar
+            return 1;
+        }else{
+            return -1;
+        }
+    }
+
+        public function eliminaMateria($matricula){
+
+            $this->db->select('iduea');
+            $this->db->from('ueas_cursadas');
+            $this->db->where('iduea', $matricula);
+            if($this->db->delete('ueas_cursadas')){
+                /* Regresa la cadena al controlador*/
+                return ($mensaje = 'Hecho');
+                
+            }else{
+                $mensaje['error'] = $this->db->_error_message();
+                /* Regresa la cadena al controlador*/
+                return $mensaje;
+            }
+        }
+
 }
 
 
