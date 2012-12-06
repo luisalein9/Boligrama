@@ -21,21 +21,21 @@ $(document).ready(function(){
 		})
 	});
 	
-	$("1").click(function() {
+	$("#1").click(function() {
 		//alert("hola")
 		$("#carrera").attr({
 			'value':'1'
 		})
 	});
 
-	$("2").click(function() {
+	$("#2").click(function() {
 		//alert("hola")
 		$("#carrera").attr({
 			'value':'2'
 		})
 	});
 	
-	$("3").click(function() {
+	$("#3").click(function() {
 		//alert("hola")
 		$("#carrera").attr({
 			'value':'3'
