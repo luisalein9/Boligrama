@@ -35,9 +35,22 @@
 				  			<input type="password" id="pass2Input" name="pass2Input"/>
 				  		</div>				  		
 						<div class="row">
-							<label for="correoInput">Repite contraseña</label>
+							<label for="correoInput">Correo</label>
 				  			<input type="text" id="correoInput" name="correoInput"/>
 				  		</div>
+				  		
+						<div class="row">
+					       	<label for="divisionesDropdown">División</label>
+							  	<select id="divisionesDropdown" name="divisionesDropdown">
+									<?php 
+										$add='division';
+										foreach ($listaDivisiones['divisiones'] as $indice => $valor) {
+											$divisionid=$add.strtolower($valor);
+											echo "<option id=$divisionid name=$divisionid>"; print_r($valor); echo "</option>";	
+										}
+								    ?>
+						  		</select>
+						</div>				  		
 				  		
 						<input type="submit" id="registroBtn" class="button offset-by-two" value="Registrar" />
 					

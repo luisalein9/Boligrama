@@ -30,7 +30,7 @@
 					</form>
 				</fieldset>
 	
-				<p><a class="six columns OlvidoPassBtn" href="#" id="OlvidoPassBtn">REGISTRO</a></p>
+				<p><a class="six columns OlvidoPassBtn" href="divisiones_c/" id="OlvidoPassBtn">REGISTRO</a></p>
 				<p><a class="six columns OlvidoPassBtn" href="#" id="OlvidoPassBtn">¿Olvidó su contraseña?</a></p>
 
 			</div><!--twelve columns-->

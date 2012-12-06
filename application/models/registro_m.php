@@ -11,5 +11,12 @@ class Registro_m extends CI_Model{
 
 		
 	}
+	
+	// public function trae_divisiones(){
+		// $this->db->select('idprofesores');
+		// $this->db->from('profesores');
+		// $this->db->where('numempleado',$numEmp);
+// 		
+	// }
 }
 ?>
