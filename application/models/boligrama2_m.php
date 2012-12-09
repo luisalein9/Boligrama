@@ -125,7 +125,7 @@
 			'alumnos_matricula' => $matricula,
 		);
 		
-		//$this->db->delete('ueas_cursadas', $datos); 
+		$this->db->delete('ueas_cursadas', $datos); 
 	}
 	
 	function elimina_alumno($matricula){

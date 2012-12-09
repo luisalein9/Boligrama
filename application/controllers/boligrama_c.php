@@ -30,6 +30,7 @@ class Boligrama_c extends CI_Controller {
         $datos['matricula']=$matricula;
         $datos['clave']=$clave;
 
+		echo $datos['ueasCursadas'];
         foreach ($datos['ueasCursadas'] as $valor) {
             $datos['creditosAlumno'] = $datos['creditosAlumno'] + $this->boligrama_m->trae_creditos_uea($valor);
         }
@@ -85,9 +86,14 @@ class Boligrama_c extends CI_Controller {
 		$datos['creditosAlumno'] =0;
 		$datos['matricula']=$matricula;
         $datos['clave']=$clave;
-
-		foreach ($datos['ueasCursadas'] as $valor) {
-			$datos['creditosAlumno'] = $datos['creditosAlumno'] + $this->boligrama_m->trae_creditos_uea($valor);
+		
+		if($datos['ueasCursadas']==-1){
+			echo "<p class='bienvenida'>¡Bienbenid@! 
+			<br>Ya puedes empezar a llenar tu boligrama</p>";
+		}else{
+			foreach ($datos['ueasCursadas'] as $valor) {
+				$datos['creditosAlumno'] = $datos['creditosAlumno'] + $this->boligrama_m->trae_creditos_uea($valor);
+			}
 		}
 
 		if ($clave!= 0) {
@@ -113,17 +119,20 @@ class Boligrama_c extends CI_Controller {
         }
 		// echo "<br>";print_r($datos['UEAAnterior']);
 		// echo "<br>";print_r($datos['UEASiguiente']);		
-
-         if ($datos['ueasCursadas']!=1) {
-            $datos['pintaCursada']='<script>';
-            foreach ($datos['ueasCursadas'] as $cursadaUEA ) { 
-
-                $datos['pintaCursada']=$datos['pintaCursada']."$('#".$cursadaUEA."').css('background-color','#214112');";
-                $datos['pintaCursada']=$datos['pintaCursada']."$('#".$cursadaUEA."').css('color','#dbdbdb');";
-
-            } 
-           $datos['pintaCursada']=$datos['pintaCursada'].'</script>';
-        }
+		if($datos['ueasCursadas']==-1){
+			echo "<p>Aún no tienes ueas cursadas</p>";
+		}else{
+	         if ($datos['ueasCursadas']!=1) {
+	            $datos['pintaCursada']='<script>';
+	            foreach ($datos['ueasCursadas'] as $cursadaUEA ) { 
+	
+	                $datos['pintaCursada']=$datos['pintaCursada']."$('#".$cursadaUEA."').css('background-color','#214112');";
+	                $datos['pintaCursada']=$datos['pintaCursada']."$('#".$cursadaUEA."').css('color','#dbdbdb');";
+	
+	            } 
+	           $datos['pintaCursada']=$datos['pintaCursada'].'</script>';
+	        }
+		}
 
         $this->load->view('boligramaMuestraSeriacion_v', $datos);
     }

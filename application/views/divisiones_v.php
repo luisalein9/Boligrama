@@ -59,9 +59,9 @@
 		           		            	
 			        </ul>	
 			        <form action="" method="post">
-			        <input type="hidden" id="divisiones" name="division" value="">
-			        <input type="hidden" id="carrera" name="carrera" value="">
-			        <input type="submit" class="button" value="Siguiente">	
+				        <input type="hidden" id="divisiones" name="division" value="">
+				        <input type="hidden" id="carrera" name="carrera" value="">
+				        <input type="submit" class="button" value="Siguiente">	
 					</form>
 	   		</div>
 		</div>   	

@@ -1,44 +1,23 @@
 $(document).ready(function(){
+	$division='1'
 	
 	$("#CBI").click(function() {
-		//alert("hola")
-		$("#divisiones").attr({
-			'value':'1'
-		})
+		$division='1'
 	});
 
 	$("#CBS").click(function() {
-		//alert("hola")
-		$("#divisiones").attr({
-			'value':'2'
-		})
+		$division='2'
+
 	});
 	
 	$("#CSH").click(function() {
-		//alert("hola")
-		$("#divisiones").attr({
-			'value':'3'
-		})
-	});
-	
-	$("#1").click(function() {
-		//alert("hola")
-		$("#carrera").attr({
-			'value':'1'
-		})
-	});
+		$division='3'
 
-	$("#2").click(function() {
-		//alert("hola")
-		$("#carrera").attr({
-			'value':'2'
-		})
 	});
-	
-	$("#3").click(function() {
-		//alert("hola")
-		$("#carrera").attr({
-			'value':'3'
-		})
-	});	
+		
 })
+
+function registro(licenciatura){
+	
+	
+}

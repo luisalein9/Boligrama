@@ -28,7 +28,7 @@
 			
         }else{
             // If user did validate, send them to members area
-            redirect('boligrama2_c/mostrarBoligrama/207310034');
+            redirect('boligrama_c/mostrarBoligrama/207310034');
         }        
     } 
 }

@@ -10,7 +10,6 @@ class Divisiones_c extends CI_Controller {
 
 
 	public function index(){
-		
 		$lDivisiones=$this->Divisiones_m->obtenLDivisiones();
 		$lCBI=$this->Divisiones_m->obtenLCBI();
 		$lCBS=$this->Divisiones_m->obtenLCBS();
@@ -25,17 +24,5 @@ class Divisiones_c extends CI_Controller {
 		 );
 
 		$this->load->view('divisiones_v', $datos);	
-
-		if($_POST != NULL){
-			
-			$datos2=Array(
-				"carrera" => $_POST['carrera'],
-				"division" => $_POST['division']
-			
-			);
-			
-			$this->load->view('registro_v', $datos2);	
-			
-		}
 	}	
 }	
