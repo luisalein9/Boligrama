@@ -210,10 +210,12 @@ class Boligrama_c extends CI_Controller {
 
         } else {
             if ($datos['UEASiguiente'] != '-1') {
-                foreach ($datos['UEASiguiente'] as $siguiente) {
-                    $resultado = $this->validaEliminacion($clave,$matricula);
-                    echo $resultado;
+                foreach ($datos['UEASiguiente'] as $index => $siguiente) {
+                //print_r($siguiente[$index+1]);
+                    $resultado = $this->validaEliminacion($siguiente[$index+1],$matricula);
+                  //  echo $resultado;
                     if ($resultado == 'elimina') {
+                    //echo $resultado;
                         $this->boligrama_m->eliminaMateria($clave);
                         break;
                     }
@@ -234,8 +236,10 @@ class Boligrama_c extends CI_Controller {
         $datos['existe']=$this->boligrama_m->valida_inserta_uea($matricula, $clave);
 
         if ($datos['existe'] =='-1') {
+
             return 'elimina';
-        } else{
+        } else {
+
             return 'NoElimina';
         }
     }
