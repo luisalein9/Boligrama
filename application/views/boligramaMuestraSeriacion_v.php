@@ -3,13 +3,13 @@
         <meta charset="UTF-8" />
         <title>BoliUAMI</title>
         <meta name="viewport" content="width=device-width" />
+        <link href='http://fonts.googleapis.com/css?family=BenchNine|Englebert|Libre+Baskerville|Text+Me+One&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="<?=base_url(); ?>static/foundation/stylesheets/foundation.min.css">
         <script src="<?=base_url(); ?>static/foundation/javascripts/foundation.min.js"></script>
         <script src="<?=base_url(); ?>static/foundation/javascripts/modernizr.foundation.js"></script>
         <script src="<?=base_url(); ?>static/foundation/javascripts/marketing_docs.js"></script>
         <script src="<?=base_url(); ?>static/js/boligrama.js"></script>
         <script src="<?=base_url(); ?>static/js/jquery-1.8.2.js"></script>
-        <link rel="stylesheet" href="<?=base_url();?>/static/CSS/boligrama.css">
         <script type="text/javascript">var base='<?= base_url(); ?>' </script> 
         <link rel="stylesheet" href="<?=base_url();?>/static/foundation/stylesheet/foundation.top-bar.css">
         <script src="<?=base_url(); ?>static/js/boligrama.js"></script>
@@ -18,13 +18,14 @@
         <script src="<?=base_url() ?>static/js/jquery.popupWindow.js"></script>
         <script src="<?=base_url(); ?>static/js/boligrama.js"></script>
           
+        <link rel="stylesheet" href="<?=base_url();?>/static/CSS/boligrama.css">
     </head>
 	<body>
 		<!--pre> < ?= print_r($licenciaturaId['ueasRelacionadas']) ?></pre-->
     <div class="row"> <!--Barra de navegación -->
         <div class="twelve columns">
             <ul class="nav-bar">
-                <li class="nine columns"><a href="#">Boligrama</a></li>
+                <li class="nine columns" ><a class="titulo" href="#">Boligrama</a></li>
                 <li class="has-flyout three columns">
                   <a href="#">Opciones</a>
                   <a href="#" class="flyout-toggle"><span> </span></a>
