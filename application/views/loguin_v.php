@@ -30,7 +30,7 @@
 					</form>
 				</fieldset>
 	
-				<p><a class="six columns registroBtn" href="registro_c/" id="registroBtn">REGISTRO</a></p>
+				<p><a class="six columns registroBtn" href="http://localhost/Boligrama/index.php/registro_c/" id="registroBtn">REGISTRO</a></p>
 				<p><a class="six columns OlvidoPassBtn" href="#" id="OlvidoPassBtn">¿Olvidó su contraseña?</a></p>
 
 			</div><!--twelve columns-->
