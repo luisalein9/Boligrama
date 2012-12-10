@@ -30,7 +30,7 @@ class Boligrama_c extends CI_Controller {
         $datos['matricula']=$matricula;
         $datos['clave']=$clave;
 
-		echo $datos['ueasCursadas'];
+		// echo $datos['ueasCursadas'];
         foreach ($datos['ueasCursadas'] as $valor) {
             $datos['creditosAlumno'] = $datos['creditosAlumno'] + $this->boligrama_m->trae_creditos_uea($valor);
         }

@@ -16,9 +16,9 @@
             $this->db->select('licenciaturas_idlicenciaturas');
             $this->db->from('alumnos');
             $this->db->where('matricula',$matricula);
-
+			
             $resultado = $this->db->get();
-
+		
             foreach ($resultado->result_array() as $value) {
                 $value;
             }
