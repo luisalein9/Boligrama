@@ -32,8 +32,8 @@
 					</form>
 				</fieldset>
 	
-				<p><a class="six columns registroBtn" href="http://localhost/Boligrama/index.php/registro_c/" id="registroBtn">REGISTRO</a></p>
-				<p><a class="six columns OlvidoPassBtn" href="#" id="OlvidoPassBtn">¿Olvidó su contraseña?</a></p>
+				<p><a class="six columns registroBtn" href="<?=base_url();?>index.php/registro_c/" id="registroBtn">REGISTRO</a></p>
+				<p><a class="six columns OlvidoPassBtn" href="<?=base_url();?>index.php/loguin_c/recuperar" id="OlvidoPassBtn">¿Olvidó su contraseña?</a></p>
 
 			</div><!--twelve columns-->
 		</div> <!--row-->

@@ -1,5 +1,4 @@
 $(document).ready(function(){  
-		alert(base);
         $('#divisionesDropdown').change(function(){ //any select change on the dropdown with id country trigger this code
             $("#licenciaturaDropdown > option").remove(); //first of all clear select items
             div_id = $('#divisionesDropdown').val();  // here we are taking country id of the selected one.

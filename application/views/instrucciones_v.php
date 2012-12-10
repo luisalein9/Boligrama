@@ -47,17 +47,17 @@
         
     </head>
 	<body>
-		<title>¿Cómo usar Boliguami?</title>
+		<title>¿Cómo usar BoliUAMI?</title>
 		<div class="row">
 		<div class="twelve columns">
-			<h3>¿Cómo usar Boliguami?</h3><hr>
+			<h3>¿Cómo usar BoliUAMI?</h3><hr>
 			<ul class="accordion">
 			  <li class="">
 			    <div class="title">
-			      <h5>¿Qué es Boliguami?</h5>
+			      <h5>¿Qué es BoliUAMI?</h5>
 			    </div>
 			    <div class="content">
-			    	<p>Boliguami es un proyecto ideado, diseñado y desarrollado para el curso de la materia 
+			    	<p>BoliUAMI es un proyecto ideado, diseñado y desarrollado para el curso de la materia 
 			    		Introducción al Diseño de Base de Datos con la intención de aplicar
 			    		los conocimientos adquiridos al mismo tiempo que se desarolla una aplicación
 			    		que puede ser de utilidad para la comunidad de la UAMI </p>
@@ -100,7 +100,7 @@
 			  </li>
 			  <li class="">
 			    <div class="title">
-			      <h5>Estructura de Boliguami</h5>
+			      <h5>Estructura de BoliUAMI</h5>
 			    </div>
 			    <div class="content">
 			    	<div class="row">

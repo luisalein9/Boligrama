@@ -34,6 +34,23 @@ class Loguin_m extends CI_Model{
 
 		return false;
 	}
+	
+	public function trae_pass($correo){
+		$this->db->select('contrasenia');	 		
+		$this->db->where('correo', $correo);
+				
+		$query = $this->db->get('alumnos');
+		
+		if(($query->num_rows())>0){ //Verificando si tengo datos a cargar
+			foreach ($query->result_array() as $value) {
+				$pass[1] = $value['contrasenia']; //Guardando mis datos en un arreglo
+			}
+			return ($pass[1]); //Regreso información al controlador
+			}else{
+				return -1;
+			}//fin del else
 
+		return false;
+	}
 }
 ?>

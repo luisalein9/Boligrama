@@ -24,7 +24,7 @@
     <div class="row"> <!--Barra de navegación -->
         <div class="twelve columns">
             <ul class="nav-bar">
-                <li class="four columns"><a class="titulo" href="#">Boliguami</a></li>
+                <li class="four columns"><a class="titulo" href="#">BoliUAMI</a></li>
                 <li class="five columns "><a href="<?= base_url(); ?>index.php/instrucciones_c" id="uso">¿Cómo usarlo?</a></li>
                 <li class="has-flyout three columns">
                   <a href="#">Opciones</a>
