@@ -18,19 +18,11 @@
 	min-height: 100px;
 }
 
-.estado0{
-	background-color: #dedede;
-}
 
+a.titulo { 
+    font-family: 'Ribeye', cursive; 
+     }
 
-.estado2{
-	background-color: #E3F5C9;
-}
-
-.estado3{
-	background-color: #fdfdfd;
-}
-
-.estado4{
-	background-color: #fdfdfd;
-}
+a {
+    font-family: 'Englebert', sans-serif;
+   }
