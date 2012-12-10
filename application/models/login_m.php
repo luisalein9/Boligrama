@@ -12,7 +12,7 @@
 					$this->db->from('alumnos');
 					$this->db->where('matricula', $matricula); 
 
-					$resultado_mat=this->db->get();
+					$resultado_mat=$this->db->get();
 
 					if($resultado_mat->num_rows()==1){
                                $existe=1; //Usuario registrado                                
@@ -30,7 +30,7 @@
 					$this->db->from('alumnos');
 					$this->db->where('contrasenia', $pass); 
 
-					$resultado_pass=this->db->get();
+					$resultado_pass=$this->db->get();
 
 					if($resultado_pass->num_rows()==1){
                                $existe=1; //Usuario registrado                                

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function pintaSiguiente(matricula){
 	alert(base);
        
@@ -25,3 +26,8 @@ function pintaSiguiente(matricula){
     
     });
 }
+=======
+function seleccionaUEA(id){
+	alert(id);
+}
+>>>>>>> 9cb02610f23dbc9afc1f1941627fdcd9393ad348

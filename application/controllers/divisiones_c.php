@@ -10,7 +10,6 @@ class Divisiones_c extends CI_Controller {
 
 
 	public function index(){
-		
 		$lDivisiones=$this->Divisiones_m->obtenLDivisiones();
 		$lCBI=$this->Divisiones_m->obtenLCBI();
 		$lCBS=$this->Divisiones_m->obtenLCBS();
@@ -25,6 +24,5 @@ class Divisiones_c extends CI_Controller {
 		 );
 
 		$this->load->view('divisiones_v', $datos);	
-
 	}	
 }	
