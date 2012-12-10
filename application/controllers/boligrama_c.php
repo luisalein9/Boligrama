@@ -24,6 +24,11 @@ class Boligrama_c extends CI_Controller {
         $this->load->view('boligrama_v', $datos);
     }
 
+    public function coloreaSiguiente($matricula) {
+        redirect(base_url().'index.php/Boligrama_c/mostrarBoligrama'.$matricula);
+        echo "sadñplkmkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk";
+    }
+
 }
 
 ?>
