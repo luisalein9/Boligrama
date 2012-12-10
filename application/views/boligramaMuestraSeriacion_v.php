@@ -12,12 +12,10 @@
         <script src="<?=base_url(); ?>static/js/jquery-1.8.2.js"></script>
         <script type="text/javascript">var base='<?= base_url(); ?>' </script> 
         <link rel="stylesheet" href="<?=base_url();?>/static/foundation/stylesheet/foundation.top-bar.css">
-        <script src="<?=base_url(); ?>static/js/boligrama.js"></script>
+        <script src="<?=base_url(); ?>static/js/boligrama2.js"></script>
         
         <!--modificaciones-->
-        <script src="<?=base_url() ?>static/js/jquery.popupWindow.js"></script>
-        <script src="<?=base_url(); ?>static/js/boligrama.js"></script>
-          
+        <script src="<?=base_url() ?>static/js/jquery.popupWindow.js"></script>       
         <link rel="stylesheet" href="<?=base_url();?>/static/CSS/boligrama.css">
     </head>
 	<body>
@@ -25,7 +23,8 @@
     <div class="row"> <!--Barra de navegación -->
         <div class="twelve columns">
             <ul class="nav-bar">
-                <li class="nine columns" ><a class="titulo" href="#">Boligrama</a></li>
+                <li class="four columns" ><a class="titulo" href="#">Boliguami</a></li>
+                <li class="five columns "><a href="<?= base_url(); ?>index.php/instrucciones_c" id="uso">¿Cómo usarlo?</a></li>
                 <li class="has-flyout three columns">
                   <a href="#">Opciones</a>
                   <a href="#" class="flyout-toggle"><span> </span></a>

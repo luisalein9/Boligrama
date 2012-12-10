@@ -20,7 +20,7 @@
 	 public function process(){
         $result = $this->loguin_m->validate();// Validate the user can login 
 		if(! $result['valida']){ // Now we verify the result
-           	$msg = '<font color=red>Nombre de usuario y/o contraseña incorrectos</font><br/>';
+           	$msg = '<label class="error">Nombre de usuario y/o contraseña incorrectos</label><br>';
 			$this->index($msg);
 			
         }else{

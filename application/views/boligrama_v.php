@@ -8,31 +8,31 @@
         <script src="<?=base_url(); ?>static/foundation/javascripts/foundation.min.js"></script>
         <script src="<?=base_url(); ?>static/foundation/javascripts/modernizr.foundation.js"></script>
         <script src="<?=base_url(); ?>static/foundation/javascripts/marketing_docs.js"></script>
-        <script src="<?=base_url(); ?>static/js/boligrama.js"></script>
         <script src="<?=base_url(); ?>static/js/jquery-1.8.2.js"></script>
         <link rel="stylesheet" href="<?=base_url();?>/static/CSS/boligrama.css">
         <script type="text/javascript">var base='<?= base_url(); ?>' </script> 
         <link rel="stylesheet" href="<?=base_url();?>/static/foundation/stylesheet/foundation.top-bar.css">
-        <script src="<?=base_url(); ?>static/js/boligrama.js"></script>
         
         <!--modificaciones-->
         <script src="<?=base_url() ?>static/js/jquery.popupWindow.js"></script>
-        <script src="<?=base_url(); ?>static/js/boligrama.js"></script>
+        <script src="<?=base_url(); ?>static/js/boligrama2.js"></script>
+
         
     </head>
 	<body>
-		<!--pre> < ?= print_r($licenciaturaId['ueasRelacionadas']) ?></pre-->
+		
     <div class="row"> <!--Barra de navegación -->
         <div class="twelve columns">
             <ul class="nav-bar">
-                <li class="nine columns"><a class="titulo" href="#">Boligrama</a></li>
+                <li class="four columns"><a class="titulo" href="#">Boliguami</a></li>
+                <li class="five columns "><a href="<?= base_url(); ?>index.php/instrucciones_c" id="uso">¿Cómo usarlo?</a></li>
                 <li class="has-flyout three columns">
                   <a href="#">Opciones</a>
                   <a href="#" class="flyout-toggle"><span> </span></a>
                   <ul class="flyout" style="display: none; ">
                     <li><a href="<?=base_url()?>index.php/boligrama_c/eliminarBoligrama/<?=$matricula?>" id="eliminarBoli">Eliminar boligrama</a></li>
                     <li><a href="<?=base_url()?>index.php/boligrama_c/eliminarAlumno/<?=$matricula?>" id="eliminarCuenta">Eliminar cuenta</a></li>
-                    <li><a href="<?=base_url()?>index.php/boligrama_c/mostrarBoligrama/<?=$matricula?>" id="eliminarCuenta">Mostrar seriación</a></li>
+                    <li><a href="<?=base_url()?>index.php/boligrama_c/mostrarBoligrama/<?=$matricula?>">Mostrar seriación</a></li>
                     <li><a href="<?=base_url()?>index.php/boligrama_c/cerrarSesion" id="cerrarSesion">Cerrar sesión</a></li>
                   </ul>
                 </li>

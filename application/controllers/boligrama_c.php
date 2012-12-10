@@ -128,7 +128,7 @@ class Boligrama_c extends CI_Controller {
 		// echo "<br>";print_r($datos['UEAAnterior']);
 		// echo "<br>";print_r($datos['UEASiguiente']);		
 		if($datos['ueasCursadas']==-1){
-			echo "<p>Aún no tienes ueas cursadas</p>";
+			echo "<p class='no-ueas'>Aún no tienes ueas cursadas</p>";
 		}else{
 	         if ($datos['ueasCursadas']!=1) {
 	            $datos['pintaCursada']='<script>';

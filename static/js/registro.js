@@ -1,11 +1,12 @@
-$(document).ready(function(){       
+$(document).ready(function(){  
+		alert(base);
         $('#divisionesDropdown').change(function(){ //any select change on the dropdown with id country trigger this code
             $("#licenciaturaDropdown > option").remove(); //first of all clear select items
             div_id = $('#divisionesDropdown').val();  // here we are taking country id of the selected one.
 
             $.ajax({
                 type: "POST",
-                url: "http://localhost/Boligrama/index.php/registro_c/licenciaturas_c/"+div_id,
+                url: base+"index.php/registro_c/licenciaturas_c/"+div_id,
                 success: function(licenciaturas) //we're calling the response json array 'cities'
                 {
                     $.each(licenciaturas,function(idlicenciatura,nombre) //here we're doing a foeach loop round each city with id as the key and city as the value

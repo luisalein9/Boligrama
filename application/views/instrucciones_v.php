@@ -2,12 +2,14 @@
 	<head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
+        <link href='http://fonts.googleapis.com/css?family=BenchNine|Englebert|Libre+Baskerville|Text+Me+One&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <script src="<?= base_url(); ?>static/foundation/javascripts/jquery.js"></script>
         <link rel="stylesheet" href="<?=base_url(); ?>static/foundation/stylesheets/foundation.min.css">
         <script src="<?= base_url(); ?>static/foundation/javascripts/foundation.min.js"></script>
         <script src="<?= base_url(); ?>static/foundation/javascripts/modernizr.foundation.js"></script>
         <script src="<?= base_url(); ?>static/foundation/javascripts/marketing_docs.js"></script>
         <script src="<?= base_url(); ?>static/foundation/javascripts/jquery.foundation.accordion.js"></script>
+        <link rel="stylesheet" href="<?=base_url();?>/static/CSS/boligrama.css">
     
 	
         <script type="text/javascript">var base='<?= base_url(); ?>' </script> 
@@ -48,14 +50,17 @@
 		<title>¿Cómo usar Boliguami?</title>
 		<div class="row">
 		<div class="twelve columns">
-					<h3>¿Cómo usar Boliguami?</h3><hr>
+			<h3>¿Cómo usar Boliguami?</h3><hr>
 			<ul class="accordion">
 			  <li class="">
 			    <div class="title">
 			      <h5>¿Qué es Boliguami?</h5>
 			    </div>
 			    <div class="content">
-			      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			    	<p>Boliguami es un proyecto ideado, diseñado y desarrollado para el curso de la materia 
+			    		Introducción al Diseño de Base de Datos con la intención de aplicar
+			    		los conocimientos adquiridos al mismo tiempo que se desarolla una aplicación
+			    		que puede ser de utilidad para la comunidad de la UAMI </p>
 			    </div>
 			  </li>
 			  <li>
@@ -120,6 +125,18 @@
 			      		<p class="six columns">Información: Mira el número de créditos que llevas
 			      			acumulados y el tiempo aproximado para que termines tu carrera </p>
 			      	</div> 
+			    </div>
+			  </li>
+			  <li class="">
+			    <div class="title">
+			      <h5>Desarrolladores</h5>
+			    </div>
+			    <div class="content">
+			      	<p>Flores Vicente Flor Nallely (207309978)</p>
+			      	<p>Gómez Leyva Luisa Maria (207310034)</p>
+					<p>Gómez Alvarez Osvaldo(207341483)</p>
+					<p>Moreno Facundo</p>
+					
 			    </div>
 			  </li>
 			</ul> <!--acordion-->	

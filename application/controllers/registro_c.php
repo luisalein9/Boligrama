@@ -10,7 +10,7 @@
 			$this->load->model('registro_m'); //Cargando mi modelo
 			$this->load->helper('form');
 			$this->load->library('form_validation');
-			$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+			$this->form_validation->set_error_delimiters('<label class="error">', '</label>');
 		}
 		
 		function index()	{           //Cargamos vista

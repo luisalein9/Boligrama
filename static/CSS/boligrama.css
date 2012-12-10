@@ -26,3 +26,27 @@ a.titulo {
 a {
     font-family: 'Englebert', sans-serif;
    }
+   
+p, h1, h2, h3, h4, h5, label{
+    font-family: 'Englebert', sans-serif;
+}
+
+label{
+	font-size:18px;
+}
+
+.bienvenida{
+    font-family: 'Englebert', sans-serif;
+	font-size:22px;
+	margin-left:10px;	
+	
+}
+
+.no-ueas{
+	margin-left:15px;
+	color:red;
+}
+
+p{
+	font-size:18px;
+}
