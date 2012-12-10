@@ -1,6 +1,7 @@
 <html>
 	<head>
         <meta charset="UTF-8" />
+        <title>BoliUAMI</title>
         <meta name="viewport" content="width=device-width" />
         <link rel="stylesheet" href="<?=base_url(); ?>static/foundation/stylesheets/foundation.min.css">
         <script src="<?=base_url(); ?>static/foundation/javascripts/foundation.min.js"></script>
@@ -75,8 +76,8 @@ $(document).foundationNavigation();
 				<p class="six columns">Tiempo aproximado para terminar:  </p>
 			</div> 
 
-            <?= ($ueasCursadas!=-1) ? $pintaCursada  :  "" ;?>
             <?= (isset($script)) ?  $script : " " ;?>
+            <?= ($ueasCursadas!=-1) ? $pintaCursada  :  "" ;?>
 
 	</body>
 </html>	
